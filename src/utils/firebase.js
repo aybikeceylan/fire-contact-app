@@ -29,18 +29,18 @@ const database = getDatabase(app);
 
 // For basic write operations
 
-export const writeUserData = (name, phone, gender, isEdit) => {
+export const writeUserData = (name, phone, gender) => {
 
     const db = getDatabase();
     const userId = new Date().getTime()
 
     console.log(name);
-    set(ref(db, 'users/' + userId + isEdit), {
+    set(ref(db, 'users/' + userId), {
         username: name,
         phone: phone,
         gender: gender,
         userId: userId,
-        isEdit: false
+
 
     });
 
@@ -75,7 +75,7 @@ export const DeleteUser = (id) => {
     remove(ref(db, "users/" + id));
     ToastifySuccess("Data Deleted!")
 };
-export const EditUser = (name, phone, gender) => {
+export const EditUser = (name, phone, gender, id) => {
     const db = getDatabase();
 
 
@@ -83,6 +83,7 @@ export const EditUser = (name, phone, gender) => {
         username: name,
         phone: phone,
         gender: gender,
+        userId: id,
 
 
     });
