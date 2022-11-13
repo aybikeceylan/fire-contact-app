@@ -9,7 +9,8 @@ const Contact = () => {
     const [name, setName] = useState("")
     const [phone, setPhone] = useState("")
     const [gender, setGender] = useState("")
-    const { setİsEdit } = writeUserData()
+    const [id, setİd] = useState("")
+    const [isEdit, setİsEdit] = useState(false)
     console.log(name)
     console.log(phone)
     console.log(gender)
@@ -17,8 +18,12 @@ const Contact = () => {
     const handleSubmit = (e) => {
         e.preventDefault();
         if (isEdit) {
-            EditUser(name, phone, gender)
+            EditUser(name, phone, gender, id)
             setİsEdit(!isEdit)
+            setName("")
+            setPhone("")
+            setGender("")
+
         } else {
             writeUserData(name, phone, gender)
             setName("")
@@ -28,10 +33,12 @@ const Contact = () => {
 
         console.log(name, phone, gender)
     }
-    const handleEdit = (username, phone, gender, isEdit) => {
+    const handleEdit = (username, phone, gender, id) => {
         setName(username)
         setPhone(phone)
         setGender(gender)
+        setİd(id)
+        setİsEdit(!isEdit)
 
 
     }

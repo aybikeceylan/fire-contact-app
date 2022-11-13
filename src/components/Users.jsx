@@ -35,7 +35,7 @@ const Users = ({ handleEdit }) => {
                                             element?.username,
                                             element?.phone,
                                             element?.gender,
-                                            element?.edit
+                                            element?.id
                                         );
                                     }} >
                                         <EditBtn />
