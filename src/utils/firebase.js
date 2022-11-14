@@ -79,7 +79,7 @@ export const EditUser = (name, phone, gender, id) => {
     const db = getDatabase();
 
 
-    update(ref(db, 'users/'), {
+    update(ref(db, 'users/' + id), {
         username: name,
         phone: phone,
         gender: gender,
