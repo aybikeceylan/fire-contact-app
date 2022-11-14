@@ -8,7 +8,7 @@ const Users = ({ handleEdit }) => {
 
 
     return (
-        <div className='w-50 '>
+        <div className='w-50'>
             <h3 className="text-center">CONTACTS</h3>
             <Table striped bordered hover>
                 <thead>

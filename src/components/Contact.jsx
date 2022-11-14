@@ -44,37 +44,41 @@ const Contact = () => {
     }
 
     return (
-        <div className='flex '>
-            <div className='w-25 ml-5  p-5'>
-                <h3>ADD CONTACT</h3>
-                <Form onSubmit={handleSubmit}>
+        <div className="d-flex">
+            <div className='w-40  ml-8'>
+                <div className='w-30 ml-5  p-5'>
+                    <h3>ADD CONTACT</h3>
+                    <Form onSubmit={handleSubmit}>
 
-                    <Form.Group className="mb-3">
+                        <Form.Group className="mb-3">
 
-                        <Form.Control id="disabledTextInput" placeholder="Name" value={name}
-                            onChange={(e) => { setName(e.target.value) }} />
-                    </Form.Group>
-                    <Form.Group className="mb-3">
+                            <Form.Control id="disabledTextInput" placeholder="Name" value={name}
+                                onChange={(e) => { setName(e.target.value) }} />
+                        </Form.Group>
+                        <Form.Group className="mb-3">
 
-                        <Form.Control id="disabledTextInput" placeholder="Phone" value={phone} onChange={(e) => { setPhone(e.target.value) }} />
-                    </Form.Group>
-                    <Form.Group className="mb-3" onChange={(e) => { setGender(e.target.value) }}>
+                            <Form.Control id="disabledTextInput" placeholder="Phone" value={phone} onChange={(e) => { setPhone(e.target.value) }} />
+                        </Form.Group>
+                        <Form.Group className="mb-3" onChange={(e) => { setGender(e.target.value) }}>
 
-                        <Form.Select id="disabledSelect">
-                            <option defaultValue="Gender">Gender</option>
-                            <option value="Male">Male</option>
-                            <option value="Female">Female</option>
-                            <option value="Other">Other</option>
-                        </Form.Select>
-                    </Form.Group>
+                            <Form.Select id="disabledSelect">
+                                <option defaultValue="Gender">Gender</option>
+                                <option value="Male">Male</option>
+                                <option value="Female">Female</option>
+                                <option value="Other">Other</option>
+                            </Form.Select>
+                        </Form.Group>
 
-                    <Button type="submit">Add</Button>
+                        <Button type="submit">Add</Button>
 
-                </Form>
+                    </Form>
+
+                </div>
 
             </div>
             <Users handleEdit={handleEdit} />
         </div>
+
 
     )
 }
