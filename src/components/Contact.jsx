@@ -44,9 +44,9 @@ const Contact = () => {
     }
 
     return (
-        <div className="d-flex">
-            <div className='w-40  ml-8'>
-                <div className='w-30 ml-5  p-5'>
+        <div className="d-flex justify-content-center">
+            <div className='w-40  bg-white mx-5'>
+                <div className='w-30  p-5'>
                     <h3>ADD CONTACT</h3>
                     <Form onSubmit={handleSubmit}>
 
