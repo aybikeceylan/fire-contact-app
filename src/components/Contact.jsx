@@ -8,7 +8,7 @@ import Users from './Users';
 const Contact = () => {
     const [name, setName] = useState("")
     const [phone, setPhone] = useState("")
-    const [gender, setGender] = useState("")
+    const [gender, setGender] = useState("Gender")
     const [id, setİd] = useState("")
     const [isEdit, setİsEdit] = useState(false)
     console.log(name)
@@ -20,18 +20,15 @@ const Contact = () => {
         if (isEdit) {
             EditUser(name, phone, gender, id)
             setİsEdit(!isEdit)
-            setName("")
-            setPhone("")
-            setGender("")
 
         } else {
             writeUserData(name, phone, gender)
-            setName("")
-            setPhone("")
-            setGender("")
-        }
 
-        console.log(name, phone, gender)
+        }
+        setName("")
+        setPhone("")
+        setGender("Gender")
+        // console.log(name, phone, gender)
     }
     const handleEdit = (username, phone, gender, id) => {
         setName(username)
@@ -59,10 +56,10 @@ const Contact = () => {
 
                             <Form.Control id="disabledTextInput" placeholder="Phone" value={phone} onChange={(e) => { setPhone(e.target.value) }} />
                         </Form.Group>
-                        <Form.Group className="mb-3" onChange={(e) => { setGender(e.target.value) }}>
+                        <Form.Group className="mb-3" >
 
-                            <Form.Select id="disabledSelect">
-                                <option defaultValue="Gender">Gender</option>
+                            <Form.Select id="disabledSelect" onChange={(e) => { setGender(e.target.value) }} value={gender}>
+                                <option value="Gender">Gender</option>
                                 <option value="Male">Male</option>
                                 <option value="Female">Female</option>
                                 <option value="Other">Other</option>

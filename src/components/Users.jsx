@@ -8,9 +8,9 @@ const Users = ({ handleEdit }) => {
 
 
     return (
-        <div className='w-50 bg-white'>
-            <h3 className="text-center ">CONTACTS</h3>
-            <Table striped bordered hover>
+        <div className='w-50'>
+            <h3 className="text-center bg-white mb-3">CONTACTS</h3>
+            <Table striped bordered hover className=" bg-white">
                 <thead>
                     <tr>
                         <th>UserName</th>
